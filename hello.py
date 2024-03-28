@@ -82,3 +82,6 @@ def index():
                              known=session.get('known', False), 
                              users=users)
     return render_template('index.html', form=form, name=session.get('name'), known=session.get('known', False))
+
+if __name__ == '__main__':
+    app.run(debug=True)
