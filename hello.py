@@ -75,13 +75,7 @@ def index():
         else:
             session['known'] = True
         session['name'] = form.name.data
-        users = User.query.all()  # Retrieve all users
-        return render_template('index.html', 
-                             form=form, 
-                             name=session.get('name'), 
-                             known=session.get('known', False), 
-                             users=users)
-    return render_template('index.html', form=form, name=session.get('name'), known=session.get('known', False))
-
-if __name__ == '__main__':
-    app.run(debug=True)
+        return redirect(url_for('index'))
+    usuarios = User.query.all() 
+    return render_template('index.html', form=form, name=session.get('name'),
+                           known=session.get('known', False), usuarios = usuarios)
