@@ -22,10 +22,10 @@
     </tr>
   </thead>
   <tbody>
-    {% for pessoa in pessoas %}
+    {% for usuario in usuarios %}
     <tr>
-      <td>{{ pessoa.username }}</td>
-      <td>{{ pessoa.role.name if pessoa.role else 'User' }}</td>
+      <td>{{ usuario.username }}</td>
+      <td>{{ usuario.role.name if usuario.role else 'User' }}</td>
     </tr>
     {% endfor %}
   </tbody>
